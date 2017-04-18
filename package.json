@@ -1,0 +1,68 @@
+{
+  "name": "dropper",
+  "productName": "dropper",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "eslint src",
+    "package-win": "electron-forge package --platform=win32",
+    "package-linux": "electron-forge package --platform=linux",
+    "asar-win": "asar p out/electron-app-win32-x64/resources/app/ out/electron-app-win32-x64/resources/app.asar && rm -rf out/electron-app-win32-x64/resources/app/",
+    "asar-linux": "asar p out/electron-app-linux-x64/resources/app/ out/electron-app-win32-x64/resources/app.asar && rm -rf out/electron-app-win32-x64/resources/app/"
+  },
+  "keywords": [],
+  "author": "wouter",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": "dropper"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "dropper"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.0",
+    "electron-positioner": "^3.0.0",
+    "jquery": "^3.2.1",
+    "material-design-lite": "^1.3.0",
+    "youtube-dl": "^1.11.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-prebuilt-compile": "1.6.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.10.3"
+  }
+}

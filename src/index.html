@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dropper</title>
+    <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+    <script src="../node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      .demo-card-wide.mdl-card {
+        width: 100%;
+      }
+      .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: #46B6AC;
+      }
+      .demo-card-wide > .mdl-card__menu {
+        color: #fff;
+      }
+      .mdl-layout__content,
+      .page-content{
+        width: 100%;
+      }
+      .mdl-card__menu{
+        padding-right: 30px;
+      }
+      body{
+        min-height: auto;
+      }
+      html{
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Dropper</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="linkURL">
+              <label class="mdl-textfield__label" for="linkURL">Youtube link</label>
+            </div>
+          </form>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <button id="download" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Download
+            </button>
+          </div>
+          <div class="mdl-card__menu">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="x-audio">
+              <input type="checkbox" id="x-audio" class="mdl-switch__input" checked>
+              <span class="mdl-switch__label">Extract Audio</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <script>var $ = require('../node_modules/jquery/dist/jquery.js')</script>
+    <script src="dl.js"></script>
+  </body>
+</html>
